@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html ng-app="MiApp">
+<head>
+	<meta charset="utf-8">
+	<title>Hola Controller</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+    <script type="text/javascript" src="controller.js"></script>
+  	
+</head>
+<body ng-controller="FirstController" class="container">
+	<!--Bienvenida-->
+	<div class="text-center">
+		<h1 >{{"Hello "+ nombre}}</h1>
+		<blockquote>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+		</blockquote>
+		<!--Presione si/no para conocer las estrellas-->
+		<!--Toggle button for display the stars if "Yes" is pressed-->
+		<a class="btn btn-success " href="" ng-submit="galaxys.showGallaxy=true" role="button">Yes!</a>
+		<a class="btn btn-danger" href="" ng-submit="galaxys.showGallaxy=false" >No</a>
+	</div>
+	<section>
+		<!-- Add a table to display the stars -->
+		<div ng-repeat="gallaxy in galaxys">
+			<h4><strong>{{gallaxy.g_name}}</strong></h4>
+			<ul>
+				<h5>Stars:</h5>
+				<li ng-repeat="star in gallaxy.stars"> {{star}}</li>
+			</ul>
+			<ul ng-show="gallaxy.planets.length">
+				Planets:
+				<li ng-repeat="planet in gallaxy.planets">{{planet}}</li>
+				<em ng-show="gallaxy.planets.length"></em>
+			</ul>	
+		</div>
+	</section>
+	<!--
+	<div class="container">
+		<h1 class="form-horizontal text-center">
+		   Programming style <small> ...deppening into the clearity of the mind.</small>
+	    </h2>
+		<form class="form-inline">
+		  <div class="form-group">
+		    <label class="sr-only">Email</label>
+		    <p class="form-control-static" ng-controller="FirstController"> {{punkster}}email@example.com</p>
+		  </div>
+		  <div class="form-group">
+		    <label for="inputPassword2" class="sr-only">Password</label>
+		    <input type="password" class="form-control" id="inputPassword2" placeholder="Password">
+		  </div>
+		  <button type="submit" class="btn btn-default">Confirm identity</button>
+		</form>
+	</div>
+	-->
+</body>
+</html>
