@@ -17,9 +17,47 @@
 		</blockquote>
 		<!--Presione si/no para conocer las estrellas-->
 		<!--Toggle button for display the stars if "Yes" is pressed-->
-		<a class="btn btn-success " href="" ng-submit="galaxys.showGallaxy=true" role="button">Yes!</a>
-		<a class="btn btn-danger" href="" ng-submit="galaxys.showGallaxy=false" >No</a>
+		<div class="btn-group">
+			<a class="btn btn-success " href="" ng-submit="galaxys.showGallaxy=true" role="button">Yes!</a>
+			<a class="btn btn-danger" href="" ng-submit="galaxys.showGallaxy=false" >No</a>
+		</div>
 	</div>
+
+	<!-- Add user data -->
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<form novalidate>
+				<div class="form-group">
+					<label for="exampleInputUserName">Name</label>
+					<textarea ng-model="newUserData.user_name" id="exampleInputUserName" class="form-control"placeholder="Name"></textarea>
+				</div>
+				<div class="form-group">
+					<label for="exampleInputEmail">Email address </label>
+					<input type="email" class="form-control" id="exampleInputEmail" placeholder="johnDoe@mailfactory.com" ng-model="newUserData.user_email" />
+				</div>
+				<div class="form-group">
+					<label for="exampleInputOpinion">Opinion</label>
+					<textarea ng-model="newUserData.user_opinion" class="form-control" id="exampleInputOpinion" placeholder="name" title="Review"></textarea>
+				</div>
+				<button type="submit" class="btn btn-success">Submit</button>
+			</form>	
+		</div>
+	</div>
+	<!-- Panel to show work of data binding-->
+	<div class="panel panel-default">
+	  <div class="panel-heading">
+	    <h3 class="panel-title">Uso de Data binding con Scope</h3>
+	  </div>
+	  <div class="panel-body">
+	    <strong>
+			Data Binding is posible with scope in this way:
+		</strong>  
+		<br>Name:  {{newUserData.user_name}}
+		<br>Email: {{newUserData.user_email}}
+		<br>Opinion: {{newUserData.user_opinion}}
+	  </div>
+	</div>
+	
 	<section>
 		<!-- Add a table to display the stars -->
 		<div ng-repeat="gallaxy in galaxys">

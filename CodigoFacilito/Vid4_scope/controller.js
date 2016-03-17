@@ -3,6 +3,20 @@
 	app.controller("FirstController", function($scope){
 		$scope.nombre = "Cruz";
 		$scope.newGalaxy = {};
+		$scope.newUserData = {};
+		$scope.personal_data=[
+			{
+				user_name: "Duckerberry Duck",
+				user_email: "dDuck@inffinix.com",
+				user_opinion: "Stars shine only in the night. Quack!!"
+			},
+			{
+				user_name: "Bussines boy",
+				user_email: "bBoy@bronx.com",
+				user_opinion: "Pop is corn and fresh is meat"
+			},
+			
+		];
 		$scope.galaxys=[
 			{
 				showGallaxy: true,
@@ -20,6 +34,9 @@
 		];
 		$scope.addGalaxy = function(){
 			$scope.galaxys.push(newGalaxy);
+		};
+		$scope.addUserData = function(){
+			$scope.personal_data.push(newUserData);
 		};
 
 	});

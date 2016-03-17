@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html ng-app="MyFirstApp">
+	<head>
+		<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+		<script type="text/javascript" src="angular.min.js"></script>
+		<script type="text/javascript" src="controller.js"></script>
+	</head>
+	<title>Fetching an SW API. Angular its awesome!!!</title>
+	<body ng-controller="FirstController">
+		<ul>
+			<li ng-repeat="planet in posts.results">
+				<strong>Planet Name: {{planet.name}}</strong>
+			</li>
+		</ul>
+	</body>
+</html>
