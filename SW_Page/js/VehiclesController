@@ -1,0 +1,14 @@
+angular.module("SwApiFetcherVehicles",[])
+	.controller("VehiclesController",function($scope,$http){
+		$scope.vehiclesApiResponse = [];
+
+		// Links of related SW pages
+		$http.get("http://swapi.co/api/vehicles/")
+			.success(function(data){
+				console.log(data);
+				$scope.vehiclesApiResponse = data;
+			})
+			.error(function(err){
+					console.log(err);
+				});
+	})
